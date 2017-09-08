@@ -1,0 +1,42 @@
+<div class="weather_module">
+    
+    <div class="actual_weather">
+
+      <h1>{{title}}</h1>
+
+      <div class="weather">
+
+        <h2>{{current_weather.date}}</h2>
+
+        <div class="content">
+          <p>{{current_weather.hour}}</p>
+          <p><img src="{{current_weather.image}}" alt="{{current_weather.condition}}"</p>
+          <p>{{current_weather.condition}} - {{current_weather.temperature}} °C</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="today_weather">
+
+      {% for hour in daily %}
+
+        <div class="hour_row">
+
+          <ul class="hour_row_content">
+              <li class="hour_info"> {{ hour.hour }} </li>
+              <li class="hour_temprature"> {{hour.temperature}} °C</li>
+              <li class="hour_image"> <img src="{{hour.image}}" /> </li>
+          </ul>
+
+          <div class="clearfix"/>
+
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+</div>
+<div class="clearfix"/>
